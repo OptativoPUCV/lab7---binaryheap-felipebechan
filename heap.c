@@ -44,6 +44,7 @@ void heap_push(Heap *pq, void *data, int priority) {
   }
   pq->size++;
 }
+//listo
 
 void heap_pop(Heap *pq) {}
 
