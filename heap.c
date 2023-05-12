@@ -75,5 +75,6 @@ void heap_pop(Heap *pq) {
         hijo = 2*padre + 1;
     }
 }
+// listo
 
 Heap *createHeap() { return NULL; }
