@@ -52,7 +52,7 @@ void heap_pop(Heap *pq) {
     if (pq == NULL || pq->size == 0) {
         return;
     }
-
+  // init padre hijo var
     int padre = 0;
     int hijo = 2*padre + 1;
 
