@@ -55,10 +55,10 @@ void heap_pop(Heap *pq) {
   // init padre hijo var
     int padre = 0;
     int hijo = 2*padre + 1;
-
+ // reduc tamano heap y reempl raiz ult elem
     pq->size--;
     pq->heapArray[0] = pq->heapArray[pq->size];
-
+  //while hj exist buscar prioridad
     while (hijo < pq->size) {
         if (hijo + 1 < pq->size && pq->heapArray[hijo + 1].priority > pq->heapArray[hijo].priority) {
             hijo++;
