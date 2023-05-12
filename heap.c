@@ -48,9 +48,30 @@ void heap_push(Heap *pq, void *data, int priority) {
 // listo
 
 void heap_pop(Heap *pq) {
-  //check 0
-  if (pq == NULL || pq->size == 0)
-    return;
+    // check 0
+    if (pq == NULL || pq->size == 0) {
+        return;
+    }
+
+    pq->size--;
+
+    int padre = 0;
+    while ((2*padre) + 1 < pq->size) {
+        int hijo = (2*padre) + 1;
+        if (hijo + 1 < pq->size && pq->heapArray[hijo + 1].priority > pq->heapArray[hijo].priority) {
+            hijo++;
+        }
+        if (pq->heapArray[hijo].priority > pq->heapArray[padre].priority) {
+            heapElem temp = pq->heapArray[padre];
+            pq->heapArray[padre] = pq->heapArray[hijo];
+            pq->heapArray[hijo] = temp;
+            padre = hijo;
+        } else {
+            break;
+        }
+    }
+    
+    pq->heapArray[0] = pq->heapArray[pq->size];
 }
 
 Heap *createHeap() { return NULL; }
