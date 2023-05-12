@@ -21,7 +21,7 @@ void *heap_top(Heap *pq) {
     return NULL;
   return pq->heapArray[0].data;
 }
-
+// listo
 void heap_push(Heap *pq, void *data, int priority) {
   // check 0
   if (pq == NULL || pq->size == 0)
@@ -36,7 +36,8 @@ void heap_push(Heap *pq, void *data, int priority) {
   pq->heapArray[i].data = data;
   pq->heapArray[i].priority = priority;
 
-  while (i > 0 && pq->heapArray[i].priority > pq->heapArray[(i - 1) / 2].priority) {
+  while (i > 0 &&
+         pq->heapArray[i].priority > pq->heapArray[(i - 1) / 2].priority) {
     heapElem vtemp = pq->heapArray[i];
     pq->heapArray[i] = pq->heapArray[(i - 1) / 2];
     pq->heapArray[(i - 1) / 2] = vtemp;
@@ -44,7 +45,7 @@ void heap_push(Heap *pq, void *data, int priority) {
   }
   pq->size++;
 }
-//listo
+// listo
 
 void heap_pop(Heap *pq) {}
 
