@@ -78,4 +78,11 @@ void heap_pop(Heap *pq) {
 }
 // listo
 
-Heap *createHeap() { return NULL; }
+Heap* createHeap(){
+   Heap* nheap = (Heap*)malloc(sizeof(Heap));
+   nheap->heapArray = (heapElem*)malloc(3*sizeof(heapElem));
+   nheap->size = 0;
+   nheap->capac = 3;
+   return nheap;
+}
+//listooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo?
